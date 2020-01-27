@@ -1,0 +1,31 @@
+﻿<Window x:Class="LivetCaskMessagingSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LivetCaskMessagingSample"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <i:Interaction.Behaviors>
+        <l:WindowCloseCancelBehavior 
+            CanClose="{Binding CanClose.Value}" 
+            CloseCanceledCallbackCommand="{Binding CloseCanceledCallbackCommand}"
+        />
+            <!-- CloseCanceledCallbackMethodTarget="{Binding}"
+            CloseCanceledCallbackMethodName="CloseCanceledCallbackMethodName" -->
+    </i:Interaction.Behaviors>
+    <i:Interaction.Triggers>
+        <l:InteractionMessageTrigger MessageKey="CloseCanceledCallbackMethodName" Messenger="{Binding Messenger}">
+            <l:ConfirmationDialogInteractionMessageAction />
+        </l:InteractionMessageTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</Window>

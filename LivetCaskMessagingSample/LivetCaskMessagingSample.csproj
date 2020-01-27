@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LivetCask.Messaging" Version="3.2.1" />
+    <PackageReference Include="LivetExtensions" Version="3.2.1" />
+    <PackageReference Include="prism.Unity" Version="7.2.0.1422" />
+    <PackageReference Include="ReactiveProperty" Version="6.2.0" />
+    <PackageReference Include="Unity" Version="5.11.3" />
+  </ItemGroup>
+
+</Project>
